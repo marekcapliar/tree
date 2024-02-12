@@ -1,0 +1,46 @@
+stromy- grafy + nejake pravidla
+pravidla:
+    existuje prave 1 hlavny vrchol
+    hlavny vrchol ma vzdy potomkov (lubovolny pocet)
+    ak je potomkov max 2, ide o binarny strom
+    kazdy potomok ma lubovolny pocet potomkov
+    potomkovia nemaju byt navzajom prepojeni
+    typy
+        binarne
+        lexikograficke
+
+html jazyk
+    sklada sa z tagov
+    tagy vytvaraju DOM- ma tvar stromu (pouziva sa v javascript)
+
+implementacia v pythone
+    s oop
+        class Tree:
+            def __init__(self, value):
+                self.value = value
+                self.right_side = None
+                self.left_side = None
+            
+            def add_right(self, value):
+                # pridaj na pravo value
+                if self.right_side is None:
+                    temp = Tree(value)
+                    self.right_side = temp
+                else:
+                    temp = Tree(value)
+                    temp.right_side = self.right_side
+                    self.right_side = temp
+            
+            def add_left(self, value):
+                # skopiruj add_right a pomen right na left
+
+    bez oop
+            value
+           ,-' '-,
+          v1     v2
+               ,-' '-,
+              v3     v4
+        zaklad listu [value, [left_side], [right_side]]
+        [value, [v1, [], []], [v2, [v3, [], []], [v4, [], []]]]
+
+pondelok- pisomecka z konzoly, da random hovadinu
